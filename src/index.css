@@ -1,0 +1,27 @@
+/* Estilos mínimos */
+:root {
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, Arial, sans-serif;
+}
+code {
+  background: #f2f2f2;
+  padding: 0.1rem 0.25rem;
+  border-radius: 4px;
+}
+.prose img,
+.prose audio,
+.prose video {
+  max-width: 100%;
+  height: auto;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
