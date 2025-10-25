@@ -1,5 +1,5 @@
-# Build Stage
-FROM node:22.12-alpine
+#--- STAGE 1: DEVELOPMENT ---
+FROM node:22.12-alpine AS dev
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
@@ -10,3 +10,17 @@ EXPOSE 5173
 CMD ["npm","run", "dev"]
 
 # docker run -p 5173:5173 <ggg>
+
+# --- STAGE 2: BUILD (PRODUCCIÓN FINAL) ---
+FROM node:22.12-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# --- STAGE 3: SERVIR (con nginx, más profesional) ---
+FROM nginx:alpine AS prod
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

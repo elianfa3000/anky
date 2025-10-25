@@ -7,6 +7,6 @@ const axiosInstance = axios.create({
 export const getData = () => {
   return axiosInstance.get("/data");
 };
-export const updateData = (data) => {
+export const updateData = (data: []) => {
   return axiosInstance.post("/updateData", data);
 };
