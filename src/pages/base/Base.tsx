@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState, ChangeEvent } from "react";
+import { useEffect, useMemo, useState } from "react";
+import type { ChangeEvent } from "react";
 import { getData } from "../../api/auth.js"; // tu API actual
 import s from "./Base.module.css";
 

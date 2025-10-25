@@ -41,7 +41,7 @@ export async function importApkg(file: File) {
 
   // 3) Abrir SQLite "collection.anki2"
   const dbBuf = await zip.file("collection.anki2")!.async("arraybuffer");
-  const SQL = await initSqlJs({ locateFile: (f) => `/${f}` }); // requiere public/sql-wasm.wasm
+  const SQL = await initSqlJs({ locateFile: (f: string) => `/${f}` }); // requiere public/sql-wasm.wasm
   const db = new SQL.Database(new Uint8Array(dbBuf));
 
   // 4) Leer tablas necesarias
