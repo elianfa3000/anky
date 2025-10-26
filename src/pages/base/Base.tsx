@@ -27,6 +27,7 @@ export default function Base() {
   // datos y estado de navegación
   const [cards, setCards] = useState<Word[]>([]);
   const [index, setIndex] = useState(0);
+  console.log("CARDS:", cards);
 
   // filtros
   const [level, setLevel] = useState<string>("Todos");
@@ -186,7 +187,9 @@ export default function Base() {
           <div className={s.drop}>Cargando tarjetas…</div>
         )}
       </main>
-      <a href="/drop">DROP</a>
+      <a className={s.baseLink} href="/drop">
+        DROP
+      </a>
     </div>
   );
 }

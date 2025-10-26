@@ -290,7 +290,7 @@ export default function Drop() {
         </p>
       </main>
 
-      <a className={s.baseLink} href="/base">
+      <a className={s.baseLink} href="/">
         BASE
       </a>
     </div>

@@ -10,6 +10,9 @@ export default defineConfig({
       usePolling: true,
     },
     host: "0.0.0.0", // accesible desde fuera del contenedor.
-    port: 5173, //puerto interno del servidor.
+    port: 5174, //puerto interno del servidor.5173
+  },
+  build: {
+    outDir: "dist",
   },
 });
