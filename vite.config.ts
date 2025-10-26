@@ -12,4 +12,7 @@ export default defineConfig({
     host: "0.0.0.0", // accesible desde fuera del contenedor.
     port: 5173, //puerto interno del servidor.
   },
+  build: {
+    outDir: "dist",
+  },
 });
